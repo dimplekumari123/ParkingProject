@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +16,14 @@ private Long empId;
 private String name;
 private Integer experience;
 private String designation;
+@OneToOne(mappedBy="Employee")
+private ParkingSpot  parkingSport;
+public ParkingSpot getParkingSport() {
+	return parkingSport;
+}
+public void setParkingSport(ParkingSpot parkingSport) {
+	this.parkingSport = parkingSport;
+}
 public Long getEmpId() {
 	return empId;
 }
